@@ -14,16 +14,12 @@ if (process.env.OPENSHIFT_MYSQL_DB_HOST != undefined) {
             url: 'http://'+process.env.OPENSHIFT_APP_DNS,
             mail: {},
             database: {
-                client: 'mysql',
+                client: 'sqlite3',
                 connection: {
-                    host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
-                    port     : process.env.OPENSHIFT_MYSQL_DB_PORT,
-                    user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
-                    password : process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
-                    database : process.env.OPENSHIFT_APP_NAME,
-                    charset  : 'utf8'
-                }
+                    filename: path.join(__dirname, '/content/data/ghost-dev.db')
                 },
+                debug: false
+            },
             server: {
                 // Host to be passed to node's `net.Server#listen()`
                 host: process.env.OPENSHIFT_NODEJS_IP,
@@ -44,15 +40,11 @@ if (process.env.OPENSHIFT_MYSQL_DB_HOST != undefined) {
             url: 'http://'+process.env.OPENSHIFT_APP_DNS,
             mail: {},
             database: {
-                client: 'pg',
+                client: 'sqlite3',
                 connection: {
-                    host     : process.env.OPENSHIFT_POSTGRESQL_DB_HOST,
-                    port     : process.env.OPENSHIFT_POSTGRESQL_DB_PORT,
-                    user     : process.env.OPENSHIFT_POSTGRESQL_DB_USERNAME,
-                    password : process.env.OPENSHIFT_POSTGRESQL_DB_PASSWORD,
-                    database : process.env.OPENSHIFT_APP_NAME,
-                    charset  : 'utf8'
-                }
+                    filename: path.join(__dirname, '/content/data/ghost-dev.db')
+                },
+                debug: false
             },
             server: {
                 // Host to be passed to node's `net.Server#listen()`
