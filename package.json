@@ -15,6 +15,7 @@
         "iojs": "~1.2.0"
     },
     "dependencies": {
-        "ghost": "^0.7.0"
+        "ghost": "^0.7.0",
+        "sqlite3":"^4.0.0"
     }
 }
