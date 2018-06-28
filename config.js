@@ -9,7 +9,7 @@ var config;
         // ### Production
         // When running Ghost in the wild, use the production environment
         // Configure your URL and mail settings here
-        production: {
+     
             url: 'http://'+process.env.OPENSHIFT_APP_DNS,
             mail: {},
             database: {
@@ -29,7 +29,7 @@ var config;
                 contentPath: path.join(__dirname, '/content/')
             }
         }
-    }
+    
   
 
         // **Developers only need to edit below here**
